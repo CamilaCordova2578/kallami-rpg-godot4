@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://du5il2q84uine" path="res://interfaz/ui_ritual.tscn" id="7_kxccd"]
 [ext_resource type="AudioStream" uid="uid://splwfkfrshct" path="res://assets/audio/sfx/audioErrorEditado.wav" id="8_f8raa"]
 [ext_resource type="AudioStream" uid="uid://11v12r83874k" path="res://assets/audio/sfx/sonidoAciertoEditado.wav" id="9_kxccd"]
+[ext_resource type="PackedScene" uid="uid://ob8bt4em3ckd" path="res://escenas/menus/menu_pausa.tscn" id="11_awjv2"]
+[ext_resource type="AudioStream" uid="uid://bgmkt0nrcufdr" path="res://assets/audio/sfx/SonidoObstaculo.wav" id="12_3q2my"]
+[ext_resource type="AudioStream" uid="uid://o3n4usd7nh27" path="res://assets/audio/ambiente/audio_fondo.wav" id="13_io5ap"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aruws"]
 radius = 38.000015
@@ -82,9 +85,22 @@ color = Color(1, 1, 1, 0.6627451)
 
 [node name="AudioError" type="AudioStreamPlayer" parent="." index="7" unique_id=1405912619]
 stream = ExtResource("8_f8raa")
+bus = &"SFX"
 
 [node name="AudioAcierto" type="AudioStreamPlayer" parent="." index="8" unique_id=127903235]
 stream = ExtResource("9_kxccd")
+bus = &"SFX"
+
+[node name="MenuPausa" parent="." index="9" unique_id=1694894827 instance=ExtResource("11_awjv2")]
+
+[node name="SonidoObstaculo" type="AudioStreamPlayer" parent="." index="10" unique_id=1924828110]
+stream = ExtResource("12_3q2my")
+bus = &"SFX"
+
+[node name="AudioAmbiente" type="AudioStreamPlayer" parent="." index="11" unique_id=579200496]
+stream = ExtResource("13_io5ap")
+volume_db = 24.0
+bus = &"Ambiente"
 
 [editable path="UIRitual"]
 [editable path="Portal"]

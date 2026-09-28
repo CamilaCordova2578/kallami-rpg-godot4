@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://c4hhvgninapem"]
-
-[ext_resource type="PackedScene" uid="uid://dg3pvb8gby7mw" path="res://pantallas/ajustes/ajustes_pantalla.tmx" id="1_cbxoi"]
-
-[node name="ajustes_pantalla" unique_id=1910522046 instance=ExtResource("1_cbxoi")]

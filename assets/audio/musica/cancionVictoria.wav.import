@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://onvv0367fja5"
-path="res://.godot/imported/cancionVictoria.wav-2d69514710d1b28914ac3e4fcd7def69.sample"
+path="res://.godot/imported/cancionVictoria.wav-99c013838edb06d5275419c2dd1ae64c.sample"
 
 [deps]
 
-source_file="res://assets/audio/music/cancionVictoria.wav"
-dest_files=["res://.godot/imported/cancionVictoria.wav-2d69514710d1b28914ac3e4fcd7def69.sample"]
+source_file="res://assets/audio/musica/cancionVictoria.wav"
+dest_files=["res://.godot/imported/cancionVictoria.wav-99c013838edb06d5275419c2dd1ae64c.sample"]
 
 [params]
 

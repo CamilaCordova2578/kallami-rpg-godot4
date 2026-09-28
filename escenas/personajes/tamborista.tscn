@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bppij485bkrap" path="res://assets/audio/sfx/paso_1.wav" id="3_xjnty"]
 [ext_resource type="AudioStream" uid="uid://bi5duvtaa2i7r" path="res://assets/audio/sfx/paso_2.wav" id="4_f84jj"]
 [ext_resource type="AudioStream" uid="uid://c8glubgxc3pkt" path="res://assets/audio/sfx/paso_3.wav" id="5_agl8g"]
+[ext_resource type="AudioStream" uid="uid://bgmkt0nrcufdr" path="res://assets/audio/sfx/SonidoObstaculo.wav" id="6_f84jj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8w0r3"]
 radius = 3.0
@@ -215,3 +216,8 @@ position_smoothing_enabled = true
 
 [node name="SFX_Pasos" type="AudioStreamPlayer2D" parent="." unique_id=1097576149]
 stream = SubResource("AudioStreamRandomizer_8w0r3")
+bus = &"SFX"
+
+[node name="SFX_Obstaculo" type="AudioStreamPlayer2D" parent="." unique_id=1489388298]
+stream = ExtResource("6_f84jj")
+bus = &"SFX"

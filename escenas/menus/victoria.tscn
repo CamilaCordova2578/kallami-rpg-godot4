@@ -23,7 +23,7 @@ texture = ExtResource("1_iavjp")
 
 [node name="MusicaVictoria" type="AudioStreamPlayer" parent="." unique_id=522895738]
 stream = ExtResource("2_cdj0s")
-volume_db = -23.045
+volume_db = -22.975
 autoplay = true
 bus = &"Musica"
 

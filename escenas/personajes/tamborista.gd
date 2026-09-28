@@ -4,6 +4,8 @@ const SPEED = 150.0
 
 @onready var anim = $AnimationPlayer
 @onready var sfx_pasos = $SFX_Pasos
+@onready var sfx_obstaculo = $SFX_Obstaculo # REFERENCIA AL NUEVO NODO DE SONIDO
+
 var en_retroceso: bool = false 
 var en_ritual: bool = false
 
@@ -56,8 +58,10 @@ func aplicar_empuje(direccion_choque: Vector2, fuerza: float = 300.0) -> void:
 	velocity = direccion_choque * fuerza
 	move_and_slide()
 	
-	# Efecto visual: hacemos que el personaje se ponga rojo por un instante
+	# Efecto visual y sonoro del golpe
 	modulate = Color(1, 0, 0) # Rojo
+	if sfx_obstaculo != null:
+		sfx_obstaculo.play() # REPRODUCE TU ARCHIVO "Sondio Obtaculo.wav"
 	
 	# Bloqueamos el control por 0.3 segundos usando un temporizador nativo
 	await get_tree().create_timer(0.3).timeout
@@ -83,5 +87,5 @@ func reproducir_paso() -> void:
 	if sfx_pasos != null:
 		# Esto hace que el sonido varíe su volumen (pitch) un poquito
 		sfx_pasos.pitch_scale = randf_range(0.8, 1.2) 
-		#Silenciamos sonidos de pasos
+		#Silenciamos sonidos de pasos por ahora
 		#sfx_pasos.play()

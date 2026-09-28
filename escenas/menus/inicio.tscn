@@ -87,6 +87,8 @@ text = "SALIR"
 horizontal_alignment = 1
 
 [node name="MusicaInicio" type="AudioStreamPlayer" parent="." unique_id=589191980]
+process_mode = 3
 stream = ExtResource("5_rehr4")
-volume_db = -31.363
+volume_db = -11.666
 autoplay = true
+bus = &"Musica"

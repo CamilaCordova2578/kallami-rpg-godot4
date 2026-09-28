@@ -25,4 +25,4 @@ func _on_btn_leyenda_pressed():
 	get_tree().change_scene_to_file("res://escenas/menus/epilogo.tscn")
 
 func _on_btn_avanzar_pressed():
-	get_tree().change_scene_to_file("res://escenas/inicio.tscn")
+	get_tree().change_scene_to_file("res://escenas/menus/inicio.tscn")

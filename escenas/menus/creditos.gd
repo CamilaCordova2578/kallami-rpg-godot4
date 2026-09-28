@@ -2,11 +2,15 @@ extends Control
 
 @onready var texto_creditos = $TextoCreditos
 @onready var btn_inicio = $BtnInicio
-#@onready var musica_creditos = $MusicaCreditos
+@onready var musica_creditos = $MusicaCreditos # 1. Quitamos el '#'
 
 func _ready():
-	
 	Global.mostrar_hud = false
+	
+	# 2. Hacemos que la música empiece a sonar apenas carga la pantalla
+	if musica_creditos != null:
+		musica_creditos.play()
+	
 	# 1. Calculamos el alto de tu pantalla de juego
 	var altura_pantalla = get_viewport_rect().size.y
 	
@@ -20,7 +24,6 @@ func _ready():
 	var destino_y = -texto_creditos.size.y - 50 
 	
 	# El '20.0' son los segundos que tardará en subir todo el texto.
-	# Si lo notas muy rápido o muy lento, ajusta este número.
 	tween.tween_property(texto_creditos, "position:y", destino_y, 20.0)
 	
 	# 4. Cuando los créditos terminen de subir, volvemos al inicio automáticamente
@@ -31,6 +34,9 @@ func _ready():
 
 
 func _on_btn_inicio_pressed():
-	#musica_creditos.stop()
+	# 3. Detenemos la música antes de irnos (quitamos el '#')
+	if musica_creditos != null:
+		musica_creditos.stop()
+		
 	# Nos vamos a la pantalla principal del juego
 	get_tree().change_scene_to_file("res://escenas/menus/inicio.tscn")

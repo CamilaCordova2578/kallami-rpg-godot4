@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b2v30sm0kj2de" path="res://pantallas/Epilogo/epilogoEscena.png" id="2_gwe6g"]
 [ext_resource type="Texture2D" uid="uid://y77ed1cb2ka5" path="res://assets/ui/botones/botonEpilogo.png" id="3_bt764"]
 [ext_resource type="FontFile" uid="uid://bmiuto2fcp5iq" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_gwe6g"]
+[ext_resource type="AudioStream" uid="uid://dg3bnhv5wkqu5" path="res://assets/audio/music/musicaEpilogo.wav" id="5_odeq7"]
+[ext_resource type="PackedScene" uid="uid://ob8bt4em3ckd" path="res://escenas/menus/menu_pausa.tscn" id="6_52dkb"]
 
 [node name="epilogo" type="Control" unique_id=2081666100]
 layout_mode = 3
@@ -43,3 +45,11 @@ offset_top = 259.0
 offset_right = 471.0
 offset_bottom = 299.0
 texture_normal = ExtResource("3_bt764")
+
+[node name="MusicaEpilogo" type="AudioStreamPlayer" parent="." unique_id=1760573199]
+stream = ExtResource("5_odeq7")
+volume_db = -24.437
+autoplay = true
+bus = &"Musica"
+
+[node name="MenuPausa" parent="." unique_id=1694894827 instance=ExtResource("6_52dkb")]

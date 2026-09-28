@@ -4,7 +4,7 @@ extends Control
 @onready var texto_izquierdo = $Libro/TextoIzquierdo
 @onready var texto_derecho = $Libro/TextoDerecho
 @onready var btn_avanzar = $BtnAvanzar
-#@onready var musica_epilogo = $MusicaEpilogo
+@onready var musica_epilogo = $MusicaEpilogo
 
 func _ready():
 	# Apagamos el HUD global limpiamente
@@ -50,6 +50,6 @@ func _mostrar_boton_salida():
 	btn_avanzar.visible = true
 
 func _on_btn_avanzar_pressed():
-	#musica_epilogo.stop()
+	musica_epilogo.stop()
 	# Nos vamos a la última pantalla del juego: Los Créditos
 	get_tree().change_scene_to_file("res://escenas/menus/creditos.tscn")

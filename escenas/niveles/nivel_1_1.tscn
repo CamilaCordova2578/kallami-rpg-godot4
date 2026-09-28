@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://6whtvxsanugf" path="res://escenas/personajes/florencio.tscn" id="2_pek8w"]
 [ext_resource type="PackedScene" uid="uid://sna2mq74jb0l" path="res://interfaz/caja_dialogo.tscn" id="4_vt7ge"]
 [ext_resource type="PackedScene" uid="uid://dgeva8ryrofdt" path="res://interfaz/portal.tscn" id="5_7x3b3"]
+[ext_resource type="PackedScene" uid="uid://ob8bt4em3ckd" path="res://escenas/menus/menu_pausa.tscn" id="8_x4xni"]
+[ext_resource type="AudioStream" uid="uid://o3n4usd7nh27" path="res://assets/audio/ambiente/audio_fondo.wav" id="9_r4giw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7mgy"]
 size = Vector2(56, 21)
@@ -45,3 +47,11 @@ polygon = PackedVector2Array(510, 380, 324, 384, 325, 358, 390, 354, 389, 338, 4
 
 [node name="PuntoInicio" type="Marker2D" parent="." index="6" unique_id=3321159]
 position = Vector2(258, 384)
+
+[node name="MenuPausa" parent="." index="7" unique_id=1694894827 instance=ExtResource("8_x4xni")]
+
+[node name="AudioAmbiente" type="AudioStreamPlayer" parent="." index="8" unique_id=1205833285]
+stream = ExtResource("9_r4giw")
+volume_db = 24.0
+autoplay = true
+bus = &"Ambiente"

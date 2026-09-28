@@ -1,5 +1,87 @@
-[gd_scene format=3 uid="uid://bvoec6rjf3hug"]
+[gd_scene format=3 uid="uid://ob8bt4em3ckd"]
 
-[ext_resource type="PackedScene" uid="uid://b64x3vq7aojc4" path="res://pantallas/menu_pausa/menu_pausa.tmx" id="1_2ihdv"]
+[ext_resource type="Texture2D" uid="uid://bd8fbub63egu2" path="res://pantallas/menu_pausa/menuPausa.png" id="1_nfcnr"]
+[ext_resource type="Script" uid="uid://b7m784qhxa74k" path="res://escenas/menus/menu_pausa.gd" id="1_oixaa"]
+[ext_resource type="Texture2D" uid="uid://bfj67ohvg3qm4" path="res://assets/ui/botones/botonParaMenuPausa.png" id="2_oixaa"]
+[ext_resource type="FontFile" uid="uid://c3eh16n21es46" path="res://assets/fonts/ThaleahFat.ttf" id="3_4ruux"]
 
-[node name="menu_pausa" unique_id=876383692 instance=ExtResource("1_2ihdv")]
+[node name="MenuPausa" type="CanvasLayer" unique_id=1694894827]
+process_mode = 3
+script = ExtResource("1_oixaa")
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=503331563]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="ContenedorCentral" type="Control" parent="." unique_id=1419109317]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 456.0
+offset_bottom = 337.0
+
+[node name="FondoMenu" type="TextureRect" parent="ContenedorCentral" unique_id=441474366]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 27.0
+offset_right = 405.0
+offset_bottom = 330.0
+texture = ExtResource("1_nfcnr")
+
+[node name="ContenedorBotones" type="VBoxContainer" parent="ContenedorCentral" unique_id=512581781]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 113.0
+offset_right = 363.0
+offset_bottom = 297.0
+
+[node name="BtnReanudar" type="TextureButton" parent="ContenedorCentral/ContenedorBotones" unique_id=2040491851]
+layout_mode = 2
+texture_normal = ExtResource("2_oixaa")
+
+[node name="Label" type="Label" parent="ContenedorCentral/ContenedorBotones/BtnReanudar" unique_id=936402905]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 19.0
+offset_right = 159.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.8980392, 0.7764706, 0.45490196, 1)
+theme_override_fonts/font = ExtResource("3_4ruux")
+theme_override_font_sizes/font_size = 20
+text = "REAUNUDAR"
+horizontal_alignment = 1
+
+[node name="BtnAjustes" type="TextureButton" parent="ContenedorCentral/ContenedorBotones" unique_id=1278692888]
+layout_mode = 2
+texture_normal = ExtResource("2_oixaa")
+
+[node name="Label" type="Label" parent="ContenedorCentral/ContenedorBotones/BtnAjustes" unique_id=1992942136]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 19.0
+offset_right = 159.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.8980392, 0.7764706, 0.45490196, 1)
+theme_override_fonts/font = ExtResource("3_4ruux")
+theme_override_font_sizes/font_size = 20
+text = "	AJUSTES"
+horizontal_alignment = 1
+
+[node name="BtnSalir" type="TextureButton" parent="ContenedorCentral/ContenedorBotones" unique_id=116155322]
+layout_mode = 2
+texture_normal = ExtResource("2_oixaa")
+
+[node name="Label" type="Label" parent="ContenedorCentral/ContenedorBotones/BtnSalir" unique_id=886627603]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 19.0
+offset_right = 159.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.8980392, 0.7764706, 0.45490196, 1)
+theme_override_fonts/font = ExtResource("3_4ruux")
+theme_override_font_sizes/font_size = 20
+text = "SALIR"
+horizontal_alignment = 1
