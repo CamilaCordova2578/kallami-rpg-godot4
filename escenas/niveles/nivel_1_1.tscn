@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://deop0rcoah44m"]
+
+[ext_resource type="PackedScene" uid="uid://dg1n0devr5vce" path="res://mapas/nivel1_plaza_pucarani/escena1_1.tmx" id="1_xtmdu"]
+[ext_resource type="Script" uid="uid://4cs4vr3kg0wt" path="res://escenas/niveles/nivel_1_1.gd" id="2_3fkop"]
+[ext_resource type="PackedScene" uid="uid://iedsrgxua25d" path="res://escenas/personajes/tamborista.tscn" id="2_3hq2m"]
+[ext_resource type="PackedScene" uid="uid://nox6ld4nldsc" path="res://escenas/items_recolectables/bombo.tscn" id="2_m7vju"]
+[ext_resource type="PackedScene" uid="uid://6whtvxsanugf" path="res://escenas/personajes/florencio.tscn" id="2_pek8w"]
+[ext_resource type="PackedScene" uid="uid://sna2mq74jb0l" path="res://interfaz/caja_dialogo.tscn" id="4_vt7ge"]
+[ext_resource type="PackedScene" uid="uid://dgeva8ryrofdt" path="res://interfaz/portal.tscn" id="5_7x3b3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7mgy"]
+size = Vector2(56, 21)
+
+[node name="Nivel1_Plaza" unique_id=228326807 instance=ExtResource("1_xtmdu")]
+script = ExtResource("2_3fkop")
+
+[node name="Bombo" parent="." index="0" unique_id=2108063878 instance=ExtResource("2_m7vju")]
+position = Vector2(295, 182)
+
+[node name="florencio" parent="." index="1" unique_id=1448705857 instance=ExtResource("2_pek8w")]
+position = Vector2(192, 259)
+
+[node name="Tamborista" parent="." index="2" unique_id=1302679034 instance=ExtResource("2_3hq2m")]
+position = Vector2(257, 382)
+
+[node name="Portal" parent="." index="3" unique_id=1767841043 node_paths=PackedStringArray("punto_respawn") instance=ExtResource("5_7x3b3")]
+position = Vector2(-5, -36)
+ruta_siguiente_nivel = "uid://rrk8guepu0ti"
+punto_respawn = NodePath("../PuntoInicio")
+requiere_bombo = true
+
+[node name="CajaDialogo" parent="." index="4" unique_id=705875265 instance=ExtResource("4_vt7ge")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="5" unique_id=395364794]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=2007428479]
+position = Vector2(355, 282.5)
+shape = SubResource("RectangleShape2D_w7mgy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="1" unique_id=780990479]
+polygon = PackedVector2Array(1, -2, 121, 3, 218, 1, 316, -2, 508, 2, 510, 77, 489, 131, 450, 96, 298, 104, 287, 94, 282, 106, 230, 107, 227, 97, 214, 96, 207, 90, 205, 99, 165, 101, 158, 90, 143, 91, 146, 113, 169, 118, 163, 145, 151, 148, 149, 161, 137, 161, 119, 164, 94, 173, 75, 181, 64, 183, 52, 192, 0, 195, 32, 254, 23, 287, 24, 303, 16, 317, 42, 323, 35, 309, 44, 290, 59, 288, 72, 292, 74, 305, 72, 318, 64, 324, 66, 334, 70, 343, 83, 346, 85, 337, 83, 326, 90, 311, 101, 306, 117, 311, 124, 327, 122, 343, 125, 355, 159, 355, 178, 354, 181, 381, -2, 382, -34, 168)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" index="2" unique_id=370815237]
+polygon = PackedVector2Array(510, 380, 324, 384, 325, 358, 390, 354, 389, 338, 400, 344, 410, 343, 414, 322, 432, 316, 453, 316, 468, 305, 486, 295, 498, 296, 486, 285, 483, 269, 511, 272, 511, 206, 493, 208, 475, 214, 452, 206, 440, 189, 451, 187, 457, 161, 436, 170, 423, 178, 371, 162, 354, 153, 353, 138, 364, 137, 371, 114, 376, 108, 437, 119, 448, 143, 512, 152, 545, 257, 528, 318)
+
+[node name="PuntoInicio" type="Marker2D" parent="." index="6" unique_id=3321159]
+position = Vector2(258, 384)

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cyomm5nsdv17v"]
+
+[ext_resource type="Script" uid="uid://qcgau1te2ejx" path="res://escenas/obstaculos/obstaculo_2_1.gd" id="1_cifbe"]
+[ext_resource type="Texture2D" uid="uid://ge3i5xkdy7a1" path="res://assets/items/apacheta.png" id="2_cifbe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_skicr"]
+radius = 25.019993
+
+[node name="obstaculo2_1" type="Area2D" unique_id=1094214468]
+script = ExtResource("1_cifbe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=462175996]
+position = Vector2(-0.74999857, -1.8775463e-06)
+scale = Vector2(0.97058827, 0.8888889)
+texture = ExtResource("2_cifbe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1888628095]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_skicr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

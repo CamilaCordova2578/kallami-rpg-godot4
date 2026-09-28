@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://d3v6o6xog4yhf"]
+
+[ext_resource type="PackedScene" uid="uid://c27g1pl4g6y2n" path="res://mapas/sala2_pajonales/escena2_2.tmx" id="1_egm48"]
+[ext_resource type="PackedScene" uid="uid://bcwojuqqq3ml7" path="res://escenas/items_recolectables/coca.tscn" id="2_3a4my"]
+[ext_resource type="PackedScene" uid="uid://iedsrgxua25d" path="res://escenas/personajes/tamborista.tscn" id="2_3dgbi"]
+[ext_resource type="Script" uid="uid://4cs4vr3kg0wt" path="res://escenas/niveles/nivel_1_1.gd" id="2_fj06s"]
+[ext_resource type="PackedScene" uid="uid://dr67v4nauspoh" path="res://escenas/obstaculos/obstaculo_2_2.tscn" id="2_jb1w0"]
+[ext_resource type="PackedScene" uid="uid://dgeva8ryrofdt" path="res://interfaz/portal.tscn" id="3_5drel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4t55"]
+size = Vector2(39, 42)
+
+[node name="escena2_2" unique_id=2016104033 instance=ExtResource("1_egm48")]
+script = ExtResource("2_fj06s")
+
+[node name="obstaculo2_1" parent="." index="0" unique_id=1094214468 instance=ExtResource("2_jb1w0")]
+position = Vector2(294, 91)
+
+[node name="obstaculo2_2" parent="." index="1" unique_id=1913141444 instance=ExtResource("2_jb1w0")]
+position = Vector2(362, 265)
+
+[node name="obstaculo2_4" parent="." index="2" unique_id=869377928 instance=ExtResource("2_jb1w0")]
+position = Vector2(271, 288)
+
+[node name="obstaculo2_5" parent="." index="3" unique_id=1479299513 instance=ExtResource("2_jb1w0")]
+position = Vector2(233, 160)
+
+[node name="obstaculo2_6" parent="." index="4" unique_id=310361603 instance=ExtResource("2_jb1w0")]
+position = Vector2(382, 202)
+
+[node name="obstaculo2_3" parent="." index="5" unique_id=1054368793 instance=ExtResource("2_jb1w0")]
+position = Vector2(301, 185)
+
+[node name="obstaculo2_7" parent="." index="6" unique_id=1410310471 instance=ExtResource("2_jb1w0")]
+position = Vector2(384, 106)
+
+[node name="Coca" parent="." index="7" unique_id=2108063878 instance=ExtResource("2_3a4my")]
+position = Vector2(411, 231)
+
+[node name="tamborista" parent="." index="8" unique_id=1302679034 instance=ExtResource("2_3dgbi")]
+position = Vector2(259, 381)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="9" unique_id=1055264197]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=1220458396]
+position = Vector2(283, 145.5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_h4t55")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="1" unique_id=309506917]
+polygon = PackedVector2Array(5, 1, 234, 1, 233, 125, 76, 131, 73, 192, 225, 195, 235, 213, 218, 225, 86, 223, 79, 242, 78, 271, 78, 291, 95, 304, 117, 308, 159, 307, 188, 305, 219, 307, 242, 307, 245, 354, 244, 378, -1, 381, -1, 189, -4, 137, -1, 71, -2, 30)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" index="2" unique_id=1497558710]
+polygon = PackedVector2Array(509, 380, 288, 383, 284, 279, 152, 280, 105, 270, 110, 247, 156, 248, 214, 249, 250, 248, 317, 244, 328, 265, 349, 281, 384, 281, 433, 281, 440, 259, 441, 220, 439, 201, 424, 189, 359, 190, 356, 217, 323, 215, 308, 201, 320, 190, 330, 181, 339, 166, 380, 163, 425, 156, 434, 142, 438, 106, 419, 93, 406, 77, 290, 75, 286, 53, 315, 50, 311, 13, 315, 2, 508, 1)
+
+[node name="Portal" parent="." index="10" unique_id=1767841043 node_paths=PackedStringArray("punto_respawn") instance=ExtResource("3_5drel")]
+position = Vector2(-2, -98)
+ruta_siguiente_nivel = "uid://bvpjoax3bst5k"
+punto_respawn = NodePath("../PuntoInicio")
+requiere_coca = true
+requiere_kantuta = true
+
+[node name="PuntoInicio" type="Marker2D" parent="." index="11" unique_id=286195794]
+position = Vector2(259, 384)

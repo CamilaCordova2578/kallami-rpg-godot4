@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c2phitcfd5j5g"]
+
+[ext_resource type="Script" uid="uid://6g66ugcwmycd" path="res://escenas/menus/victoria.gd" id="1_cdj0s"]
+[ext_resource type="Texture2D" uid="uid://dm3pded6l6uh" path="res://pantallas/Victoria/pantallaVictoria.png" id="1_iavjp"]
+[ext_resource type="AudioStream" uid="uid://onvv0367fja5" path="res://assets/audio/music/cancionVictoria.wav" id="2_cdj0s"]
+[ext_resource type="Texture2D" uid="uid://cjyliqnb7y1kr" path="res://assets/ui/cajaDialogo.png" id="3_kafo0"]
+[ext_resource type="FontFile" uid="uid://bmiuto2fcp5iq" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="4_ktpcd"]
+[ext_resource type="Texture2D" uid="uid://cswqmp3ijdc83" path="res://assets/ui/botones/botonMapa.png" id="5_3wrvb"]
+[ext_resource type="Texture2D" uid="uid://y77ed1cb2ka5" path="res://assets/ui/botones/botonEpilogo.png" id="6_13na1"]
+
+[node name="victoria" type="Control" unique_id=582975657]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cdj0s")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=195449760]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_iavjp")
+
+[node name="MusicaVictoria" type="AudioStreamPlayer" parent="." unique_id=522895738]
+stream = ExtResource("2_cdj0s")
+volume_db = -23.045
+autoplay = true
+bus = &"Musica"
+
+[node name="CajaDialogo" type="TextureRect" parent="." unique_id=637895664]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 269.0
+offset_right = 425.0
+offset_bottom = 372.0
+texture = ExtResource("3_kafo0")
+
+[node name="Texto" type="RichTextLabel" parent="CajaDialogo" unique_id=927791512]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 371.0
+offset_bottom = 84.0
+theme_override_fonts/normal_font = ExtResource("4_ktpcd")
+
+[node name="ContenedorBotones" type="HBoxContainer" parent="." unique_id=2107860966]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 308.0
+offset_right = 493.0
+offset_bottom = 348.0
+
+[node name="BtnLeyenda" type="TextureButton" parent="ContenedorBotones" unique_id=183912599]
+layout_mode = 2
+texture_normal = ExtResource("5_3wrvb")
+
+[node name="BtnAvanzar" type="TextureButton" parent="ContenedorBotones" unique_id=812265212]
+layout_mode = 2
+texture_normal = ExtResource("6_13na1")

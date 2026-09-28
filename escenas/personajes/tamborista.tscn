@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://iedsrgxua25d"]
+
+[ext_resource type="Script" uid="uid://buv2fh3pyyua4" path="res://escenas/personajes/tamborista.gd" id="1_x8ii2"]
+[ext_resource type="Texture2D" uid="uid://cto7n5qpmo1sx" path="res://assets/sprites/personajes/tamborista.png" id="2_wf7hq"]
+[ext_resource type="AudioStream" uid="uid://bppij485bkrap" path="res://assets/audio/sfx/paso_1.wav" id="3_xjnty"]
+[ext_resource type="AudioStream" uid="uid://bi5duvtaa2i7r" path="res://assets/audio/sfx/paso_2.wav" id="4_f84jj"]
+[ext_resource type="AudioStream" uid="uid://c8glubgxc3pkt" path="res://assets/audio/sfx/paso_3.wav" id="5_agl8g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8w0r3"]
+radius = 3.0
+height = 12.0
+
+[sub_resource type="Animation" id="Animation_q5ctb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xjnty"]
+resource_name = "caminar_abajo"
+length = 0.26999999999999996
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"reproducir_paso"
+}, {
+"args": [],
+"method": &"reproducir_paso"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f84jj"]
+resource_name = "caminar_arriba"
+length = 0.26999999999999996
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"reproducir_paso"
+}, {
+"args": [],
+"method": &"reproducir_paso"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_agl8g"]
+resource_name = "caminar_der"
+length = 0.26999999999999996
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"reproducir_paso"
+}, {
+"args": [],
+"method": &"reproducir_paso"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7ghg1"]
+resource_name = "caminar_izq"
+length = 0.26999999999999996
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"reproducir_paso"
+}, {
+"args": [],
+"method": &"reproducir_paso"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhh8t"]
+_data = {
+&"RESET": SubResource("Animation_q5ctb"),
+&"caminar_abajo": SubResource("Animation_xjnty"),
+&"caminar_arriba": SubResource("Animation_f84jj"),
+&"caminar_der": SubResource("Animation_agl8g"),
+&"caminar_izq": SubResource("Animation_7ghg1")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8w0r3"]
+streams_count = 3
+stream_0/stream = ExtResource("3_xjnty")
+stream_1/stream = ExtResource("4_f84jj")
+stream_2/stream = ExtResource("5_agl8g")
+
+[node name="tamborista" type="CharacterBody2D" unique_id=1302679034]
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_x8ii2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1937717293]
+position = Vector2(0, -14)
+texture = ExtResource("2_wf7hq")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339078124]
+position = Vector2(0, -3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_8w0r3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1961855719]
+libraries/ = SubResource("AnimationLibrary_xhh8t")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=462565728]
+zoom = Vector2(2, 2)
+limit_right = 512
+limit_bottom = 384
+position_smoothing_enabled = true
+
+[node name="SFX_Pasos" type="AudioStreamPlayer2D" parent="." unique_id=1097576149]
+stream = SubResource("AudioStreamRandomizer_8w0r3")

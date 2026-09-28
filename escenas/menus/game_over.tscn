@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dpc42xw81khpt"]
+
+[ext_resource type="Script" uid="uid://05mwq5papnf1" path="res://escenas/menus/game_over.gd" id="1_37bs8"]
+[ext_resource type="Texture2D" uid="uid://ds2ljydldokre" path="res://pantallas/game_over/PantallaGameOver.png" id="2_mgfr6"]
+[ext_resource type="AudioStream" uid="uid://dpjvp2qb7453r" path="res://assets/audio/music/cancionGameOver.wav" id="3_g6n7c"]
+[ext_resource type="Texture2D" uid="uid://cjyliqnb7y1kr" path="res://assets/ui/cajaDialogo.png" id="4_gyijm"]
+[ext_resource type="FontFile" uid="uid://bmiuto2fcp5iq" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="5_0gcmd"]
+[ext_resource type="Texture2D" uid="uid://c1f1mp35lir5n" path="res://assets/ui/botones/botonReinciar.png" id="6_gp277"]
+[ext_resource type="Texture2D" uid="uid://bwejft0h0i5ig" path="res://assets/ui/botones/botonMenuIncio.png" id="7_dso0d"]
+
+[node name="Control" type="Control" unique_id=289107817]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_37bs8")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=364652341]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_mgfr6")
+
+[node name="MusicaGameOver" type="AudioStreamPlayer" parent="." unique_id=486964487]
+stream = ExtResource("3_g6n7c")
+volume_db = -18.318
+autoplay = true
+bus = &"Musica"
+
+[node name="CajaDialogo" type="TextureRect" parent="." unique_id=2098264446]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 274.0
+offset_right = 420.0
+offset_bottom = 377.0
+texture = ExtResource("4_gyijm")
+
+[node name="Texto" type="RichTextLabel" parent="CajaDialogo" unique_id=1376579872]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 13.0
+offset_right = 374.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("5_0gcmd")
+
+[node name="ContenedorBotones" type="HBoxContainer" parent="." unique_id=1723460284]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 312.0
+offset_right = 501.0
+offset_bottom = 340.0
+
+[node name="BtnReintentar" type="TextureButton" parent="ContenedorBotones" unique_id=362607103]
+layout_mode = 2
+texture_normal = ExtResource("6_gp277")
+
+[node name="BtnInicio" type="TextureButton" parent="ContenedorBotones" unique_id=247170834]
+layout_mode = 2
+texture_normal = ExtResource("7_dso0d")

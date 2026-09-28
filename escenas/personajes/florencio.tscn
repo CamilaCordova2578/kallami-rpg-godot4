@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://6whtvxsanugf"]
+
+[ext_resource type="Script" uid="uid://spvtbg6k6h0x" path="res://escenas/personajes/florencio.gd" id="1_18ube"]
+[ext_resource type="Texture2D" uid="uid://qenesv8p5j0d" path="res://assets/personajes/viejo_florencio.png" id="1_exhqe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4t55"]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="Animation" id="Animation_18ube"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0v48i"]
+resource_name = "caminar_abajo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gn1y5"]
+resource_name = "caminar_arriba"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_xvggf"]
+resource_name = "caminar_der"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_5h45y"]
+resource_name = "caminar_izq"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3eur4"]
+_data = {
+&"RESET": SubResource("Animation_18ube"),
+&"caminar_abajo": SubResource("Animation_0v48i"),
+&"caminar_arriba": SubResource("Animation_gn1y5"),
+&"caminar_der": SubResource("Animation_xvggf"),
+&"caminar_izq": SubResource("Animation_5h45y")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4t55"]
+radius = 21.023796
+
+[node name="florencio" type="CharacterBody2D" unique_id=1448705857]
+script = ExtResource("1_18ube")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1684595773]
+position = Vector2(8, -16)
+texture = ExtResource("1_exhqe")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1443453866]
+position = Vector2(8, -5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_h4t55")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2109439756]
+libraries/ = SubResource("AnimationLibrary_3eur4")
+
+[node name="ZonaDialogo" type="Area2D" parent="." unique_id=858539023]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDialogo" unique_id=1987511149]
+position = Vector2(8, -7)
+shape = SubResource("CircleShape2D_h4t55")
+
+[connection signal="body_entered" from="ZonaDialogo" to="." method="_on_zona_dialogo_body_entered"]
+[connection signal="body_exited" from="ZonaDialogo" to="." method="_on_zona_dialogo_body_exited"]

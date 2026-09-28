@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://7n8af4cbfo0i"]
+
+[ext_resource type="Script" uid="uid://xk0r5j04xh0q" path="res://escenas/items_recolectables/kantuta.gd" id="1_w0pha"]
+[ext_resource type="Texture2D" uid="uid://cbsvykt63ajb0" path="res://assets/items/kantuta.png" id="2_w0pha"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8w0r3"]
+radius = 16.03122
+
+[node name="Kantuta" type="Area2D" unique_id=2108063878]
+script = ExtResource("1_w0pha")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=222463184]
+texture = ExtResource("2_w0pha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1279947912]
+shape = SubResource("CircleShape2D_8w0r3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

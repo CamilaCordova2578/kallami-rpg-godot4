@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://3oy0wg4np2vy"]
+
+[ext_resource type="Texture2D" uid="uid://yjkjyag7v3rt" path="res://pantallas/menu_inicio/MenuInicio.png" id="1_5tk3q"]
+[ext_resource type="Script" uid="uid://dc258pkke2umq" path="res://escenas/menus/inicio.gd" id="1_rurs7"]
+[ext_resource type="Texture2D" uid="uid://duswdvp65x6g1" path="res://assets/ui/botones/botonInicio.png" id="2_rurs7"]
+[ext_resource type="FontFile" uid="uid://c3eh16n21es46" path="res://assets/fonts/ThaleahFat.ttf" id="3_rehr4"]
+[ext_resource type="AudioStream" uid="uid://onvv0367fja5" path="res://assets/audio/music/cancionVictoria.wav" id="5_rehr4"]
+
+[node name="Control" type="Control" unique_id=1592473892]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rurs7")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1618439021]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_5tk3q")
+
+[node name="ContenedorBotones" type="VBoxContainer" parent="." unique_id=1455136866]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 177.0
+offset_right = 287.0
+offset_bottom = 233.0
+
+[node name="BtnJugar" type="TextureButton" parent="ContenedorBotones" unique_id=702663433]
+layout_mode = 2
+texture_normal = ExtResource("2_rurs7")
+
+[node name="TextoJugar" type="RichTextLabel" parent="ContenedorBotones/BtnJugar" unique_id=1377138198]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 8.0
+offset_right = 87.0
+offset_bottom = 23.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_rehr4")
+text = "JUGAR"
+horizontal_alignment = 1
+
+[node name="BtnNiveles" type="TextureButton" parent="ContenedorBotones" unique_id=942036154]
+layout_mode = 2
+texture_normal = ExtResource("2_rurs7")
+
+[node name="TextoNiveles" type="RichTextLabel" parent="ContenedorBotones/BtnNiveles" unique_id=1731067537]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 7.0
+offset_right = 86.0
+offset_bottom = 22.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_rehr4")
+text = "niveles"
+horizontal_alignment = 1
+
+[node name="BtnAjustes" type="TextureButton" parent="ContenedorBotones" unique_id=1267568945]
+layout_mode = 2
+texture_normal = ExtResource("2_rurs7")
+
+[node name="TextoAjustes" type="RichTextLabel" parent="ContenedorBotones/BtnAjustes" unique_id=2097284730]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 7.0
+offset_right = 87.0
+offset_bottom = 22.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_rehr4")
+text = "ajustes"
+horizontal_alignment = 1
+
+[node name="BtnSalir" type="TextureButton" parent="ContenedorBotones" unique_id=297093853]
+layout_mode = 2
+texture_normal = ExtResource("2_rurs7")
+
+[node name="TextoSalir" type="RichTextLabel" parent="ContenedorBotones/BtnSalir" unique_id=1922660500]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 7.0
+offset_right = 86.0
+offset_bottom = 22.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_rehr4")
+text = "SALIR"
+horizontal_alignment = 1
+
+[node name="MusicaInicio" type="AudioStreamPlayer" parent="." unique_id=589191980]
+stream = ExtResource("5_rehr4")
+volume_db = -31.363
+autoplay = true

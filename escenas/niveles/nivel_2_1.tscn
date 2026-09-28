@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://rrk8guepu0ti"]
+
+[ext_resource type="PackedScene" uid="uid://d3erex21fmer4" path="res://mapas/sala1_vertiente/escena2_1.tmx" id="1_28m3w"]
+[ext_resource type="Script" uid="uid://4cs4vr3kg0wt" path="res://escenas/niveles/nivel_1_1.gd" id="2_pf15h"]
+[ext_resource type="PackedScene" uid="uid://dgeva8ryrofdt" path="res://interfaz/portal.tscn" id="2_qelnr"]
+[ext_resource type="PackedScene" uid="uid://bf8krbsaaiq1c" path="res://escenas/obstaculos/obstaculo_2_1_2.tscn" id="2_rv8ik"]
+[ext_resource type="PackedScene" uid="uid://7n8af4cbfo0i" path="res://escenas/items_recolectables/kantuta.tscn" id="2_rytm5"]
+[ext_resource type="PackedScene" uid="uid://dg85o5342p7l1" path="res://escenas/obstaculos/obstaculo_2_1.tscn" id="2_v304p"]
+[ext_resource type="PackedScene" uid="uid://iedsrgxua25d" path="res://escenas/personajes/tamborista.tscn" id="2_vrcdx"]
+
+[node name="escena2_1" unique_id=1523682163 instance=ExtResource("1_28m3w")]
+script = ExtResource("2_pf15h")
+
+[node name="obstaculo2_1_2" parent="." index="0" unique_id=1094214468 instance=ExtResource("2_rv8ik")]
+position = Vector2(234, 131)
+
+[node name="obstaculo2_1_3" parent="." index="1" unique_id=692095633 instance=ExtResource("2_rv8ik")]
+position = Vector2(101, 160)
+
+[node name="obstaculo2_1_4" parent="." index="2" unique_id=460338641 instance=ExtResource("2_rv8ik")]
+position = Vector2(285, 130)
+
+[node name="obstaculo2_1_6" parent="." index="3" unique_id=1014489670 instance=ExtResource("2_rv8ik")]
+position = Vector2(359, 100)
+
+[node name="obstaculo2_1_5" parent="." index="4" unique_id=1188136773 instance=ExtResource("2_rv8ik")]
+position = Vector2(427, 144)
+
+[node name="obstaculo2_1" parent="." index="5" unique_id=1050723610 instance=ExtResource("2_v304p")]
+position = Vector2(138, 288)
+
+[node name="obstaculo2_4" parent="." index="6" unique_id=4389019 instance=ExtResource("2_v304p")]
+position = Vector2(92, 217)
+
+[node name="obstaculo2_2" parent="." index="7" unique_id=1694551330 instance=ExtResource("2_v304p")]
+position = Vector2(373, 287)
+
+[node name="obstaculo2_3" parent="." index="8" unique_id=1561288347 instance=ExtResource("2_v304p")]
+position = Vector2(244, 73)
+
+[node name="obstaculo2_3" parent="obstaculo2_3" index="2" unique_id=227302504 instance=ExtResource("2_v304p")]
+position = Vector2(385, 122)
+
+[node name="Kantuta" parent="." index="9" unique_id=2108063878 instance=ExtResource("2_rytm5")]
+position = Vector2(258, 123)
+
+[node name="Portal" parent="." index="10" unique_id=1767841043 node_paths=PackedStringArray("punto_respawn") instance=ExtResource("2_qelnr")]
+position = Vector2(-4, -95)
+ruta_siguiente_nivel = "uid://d3v6o6xog4yhf"
+punto_respawn = NodePath("../PuntoInicio")
+requiere_kantuta = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="11" unique_id=123820513]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0" unique_id=99367655]
+polygon = PackedVector2Array(0, 0, 1, 382, 206, 384, 200, 367, 179, 368, 175, 341, 125, 340, 108, 326, 99, 300, 76, 293, 70, 264, 47, 249, 49, 140, 50, 119, 68, 115, 86, 97, 101, 90, 103, 77, 119, 75, 124, 61, 131, 72, 146, 72, 149, 56, 157, 43, 192, 46, 200, 31, 203, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" index="1" unique_id=858962892]
+polygon = PackedVector2Array(510, 384, 312, 385, 313, 367, 337, 366, 335, 345, 386, 341, 389, 329, 411, 328, 413, 318, 435, 317, 443, 292, 460, 291, 460, 154, 459, 116, 434, 99, 412, 94, 412, 75, 390, 74, 387, 54, 341, 48, 336, 23, 308, 14, 309, -1, 509, 2, 515, 377)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" index="2" unique_id=142681148]
+polygon = PackedVector2Array(155, 149, 142, 142, 132, 145, 130, 163, 131, 180, 130, 235, 143, 245, 158, 248, 160, 266, 227, 269, 229, 247, 285, 250, 285, 268, 356, 268, 355, 246, 383, 242, 383, 149, 360, 149, 356, 137, 355, 121, 319, 117, 308, 126, 290, 134, 286, 144, 228, 145, 214, 135, 203, 123, 186, 120, 163, 118, 154, 129)
+
+[node name="tamborista" parent="." index="12" unique_id=1302679034 instance=ExtResource("2_vrcdx")]
+position = Vector2(260, 383)
+
+[node name="PuntoInicio" type="Marker2D" parent="." index="13" unique_id=960467852]
+position = Vector2(261, 384)

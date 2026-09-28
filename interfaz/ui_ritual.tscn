@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://du5il2q84uine"]
+
+[ext_resource type="Texture2D" uid="uid://cni1kp54fcv8b" path="res://assets/ui/FondoPiedra.png" id="1_dbis1"]
+[ext_resource type="Texture2D" uid="uid://c58bpdjooklf4" path="res://assets/ui/romboApagado.png" id="2_4grso"]
+[ext_resource type="Texture2D" uid="uid://51285vlvomo7" path="res://assets/ui/cajaDialogoFlorencio.png" id="3_4grso"]
+
+[node name="UIRitual" type="CanvasLayer" unique_id=671449830]
+
+[node name="ContenedorBarra" type="Control" parent="." unique_id=1457404382]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FondoPiedra" type="TextureRect" parent="ContenedorBarra" unique_id=1422003500]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 260.0
+offset_right = 467.0
+offset_bottom = 345.0
+texture = ExtResource("1_dbis1")
+
+[node name="FilaRombos" type="HBoxContainer" parent="ContenedorBarra/FondoPiedra" unique_id=1450120315]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 33.0
+offset_right = 292.0
+offset_bottom = 60.0
+accessibility_region = true
+alignment = 1
+
+[node name="Rombo1" type="TextureRect" parent="ContenedorBarra/FondoPiedra/FilaRombos" unique_id=1206617165]
+layout_mode = 2
+texture = ExtResource("2_4grso")
+expand_mode = 3
+
+[node name="Rombo2" type="TextureRect" parent="ContenedorBarra/FondoPiedra/FilaRombos" unique_id=239327780]
+layout_mode = 2
+texture = ExtResource("2_4grso")
+expand_mode = 3
+
+[node name="Rombo3" type="TextureRect" parent="ContenedorBarra/FondoPiedra/FilaRombos" unique_id=527278266]
+layout_mode = 2
+texture = ExtResource("2_4grso")
+expand_mode = 3
+
+[node name="Rombo4" type="TextureRect" parent="ContenedorBarra/FondoPiedra/FilaRombos" unique_id=1010779282]
+layout_mode = 2
+texture = ExtResource("2_4grso")
+expand_mode = 3
+
+[node name="Rombo5" type="TextureRect" parent="ContenedorBarra/FondoPiedra/FilaRombos" unique_id=2085200020]
+layout_mode = 2
+texture = ExtResource("2_4grso")
+expand_mode = 3
+
+[node name="CajaDialogo" type="TextureRect" parent="." unique_id=1806334727]
+offset_left = 36.0
+offset_top = 30.0
+offset_right = 477.0
+offset_bottom = 131.0
+texture = ExtResource("3_4grso")
+
+[node name="TextoMensaje" type="Label" parent="CajaDialogo" unique_id=1426403942]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 19.0
+offset_right = 418.0
+offset_bottom = 85.0
+autowrap_mode = 3

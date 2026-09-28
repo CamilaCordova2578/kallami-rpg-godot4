@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://x5gftyjgyveo"]
+
+[ext_resource type="PackedScene" uid="uid://do8m5lna6oitb" path="res://mapas/nivel3_montañaKallami/escena3.tmx" id="1_3hke0"]
+[ext_resource type="Script" uid="uid://4cs4vr3kg0wt" path="res://escenas/niveles/nivel_1_1.gd" id="2_obesf"]
+[ext_resource type="PackedScene" uid="uid://iedsrgxua25d" path="res://escenas/personajes/tamborista.tscn" id="2_oeckg"]
+[ext_resource type="PackedScene" uid="uid://dgeva8ryrofdt" path="res://interfaz/portal.tscn" id="2_ydwc1"]
+[ext_resource type="Script" uid="uid://d2ctu76kmmb2h" path="res://interfaz/ritual_manager.gd" id="4_q2w4e"]
+[ext_resource type="Texture2D" uid="uid://c58bpdjooklf4" path="res://assets/ui/romboApagado.png" id="5_f8raa"]
+[ext_resource type="Texture2D" uid="uid://da7ikip355gfu" path="res://assets/ui/romboPrendido.png" id="6_kxccd"]
+[ext_resource type="PackedScene" uid="uid://du5il2q84uine" path="res://interfaz/ui_ritual.tscn" id="7_kxccd"]
+[ext_resource type="AudioStream" uid="uid://splwfkfrshct" path="res://assets/audio/sfx/audioErrorEditado.wav" id="8_f8raa"]
+[ext_resource type="AudioStream" uid="uid://11v12r83874k" path="res://assets/audio/sfx/sonidoAciertoEditado.wav" id="9_kxccd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aruws"]
+radius = 38.000015
+height = 155.99997
+
+[sub_resource type="Gradient" id="Gradient_q2w4e"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7thap"]
+gradient = SubResource("Gradient_q2w4e")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.1)
+
+[node name="Nivel3" unique_id=253815049 instance=ExtResource("1_3hke0")]
+script = ExtResource("2_obesf")
+
+[node name="UIRitual" parent="." index="0" unique_id=671449830 instance=ExtResource("7_kxccd")]
+visible = false
+
+[node name="Portal" parent="." index="1" unique_id=1767841043 node_paths=PackedStringArray("punto_respawn") instance=ExtResource("2_ydwc1")]
+position = Vector2(-8, 120)
+punto_respawn = NodePath("../Marker2D")
+es_altar_final = true
+
+[node name="CollisionShape2D" parent="Portal" index="0" unique_id=773443704]
+position = Vector2(272, 104)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_aruws")
+
+[node name="tamborista" parent="." index="2" unique_id=1302679034 instance=ExtResource("2_oeckg")]
+position = Vector2(268, 376)
+
+[node name="PointLight2D" type="PointLight2D" parent="tamborista" index="4" unique_id=1020716388]
+position = Vector2(-0.49999142, -14.999998)
+scale = Vector2(0.3593747, 0.49999994)
+color = Color(0.7607843, 0.88235295, 0.9607843, 1)
+energy = 0.88
+texture = SubResource("GradientTexture2D_7thap")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3" unique_id=588185327]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0" unique_id=761119429]
+polygon = PackedVector2Array(0, 0, 70, 0, 307, 1, 313, 54, 330, 68, 334, 109, 369, 109, 391, 130, 399, 208, 369, 208, 332, 210, 307, 204, 305, 218, 274, 219, 268, 199, 251, 199, 245, 215, 222, 201, 192, 201, 176, 211, 160, 206, 128, 215, 116, 201, 103, 227, 81, 206, 97, 178, 93, 151, 63, 172, 42, 183, 24, 203, 27, 238, 51, 215, 66, 215, 84, 240, 116, 252, 141, 263, 150, 286, 166, 302, 175, 310, 195, 295, 203, 320, 238, 321, 243, 383, 2, 383)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" index="1" unique_id=1913289585]
+polygon = PackedVector2Array(512, 383, 291, 384, 284, 359, 295, 347, 303, 327, 323, 303, 328, 321, 339, 305, 346, 289, 368, 291, 380, 291, 384, 268, 397, 244, 422, 250, 442, 222, 457, 247, 476, 239, 492, 207, 506, 226, 509, 199, 489, 195, 462, 188, 446, 185, 418, 176, 399, 171, 395, 128, 370, 109, 333, 104, 312, 52, 307, 1, 509, 1)
+
+[node name="Marker2D" type="Marker2D" parent="." index="4" unique_id=1348590071]
+position = Vector2(271, 384)
+
+[node name="RitualManager" type="Node" parent="." index="5" unique_id=445597724 node_paths=PackedStringArray("ui_ritual", "barra_ritmo", "caja_dialogo", "texto_mensaje", "rombos", "jugador", "punto_reaparicion", "sfx_error", "sfx_bombo")]
+script = ExtResource("4_q2w4e")
+ui_ritual = NodePath("../UIRitual")
+barra_ritmo = NodePath("../UIRitual/ContenedorBarra/FondoPiedra")
+caja_dialogo = NodePath("../UIRitual/CajaDialogo")
+texto_mensaje = NodePath("../UIRitual/CajaDialogo/TextoMensaje")
+rombos = [NodePath("../UIRitual/ContenedorBarra/FondoPiedra/FilaRombos/Rombo1"), NodePath("../UIRitual/ContenedorBarra/FondoPiedra/FilaRombos/Rombo2"), NodePath("../UIRitual/ContenedorBarra/FondoPiedra/FilaRombos/Rombo3"), NodePath("../UIRitual/ContenedorBarra/FondoPiedra/FilaRombos/Rombo4"), NodePath("../UIRitual/ContenedorBarra/FondoPiedra/FilaRombos/Rombo5")]
+tex_apagado = ExtResource("5_f8raa")
+tex_prendido = ExtResource("6_kxccd")
+jugador = NodePath("../tamborista")
+punto_reaparicion = NodePath("../Marker2D")
+ruta_game_over = "uid://dpc42xw81khpt"
+ruta_victoria = "uid://c2phitcfd5j5g"
+sfx_error = NodePath("../AudioError")
+sfx_bombo = NodePath("../AudioAcierto")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="6" unique_id=92010121]
+position = Vector2(-58, 38)
+color = Color(1, 1, 1, 0.6627451)
+
+[node name="AudioError" type="AudioStreamPlayer" parent="." index="7" unique_id=1405912619]
+stream = ExtResource("8_f8raa")
+
+[node name="AudioAcierto" type="AudioStreamPlayer" parent="." index="8" unique_id=127903235]
+stream = ExtResource("9_kxccd")
+
+[editable path="UIRitual"]
+[editable path="Portal"]
+[editable path="tamborista"]

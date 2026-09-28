@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://sna2mq74jb0l"]
+
+[ext_resource type="Script" uid="uid://e4jajc77rf48" path="res://interfaz/caja_dialogo.gd" id="1_bifws"]
+
+[node name="CajaDialogo" type="CanvasLayer" unique_id=705875265]
+script = ExtResource("1_bifws")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=597224176]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.11764706, 0.101960786, 0.101960786, 0.8)
+
+[node name="TextoNombre" type="Label" parent="ColorRect" unique_id=1327765621]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.9019608, 0.6313726, 0.23529412, 1)
+text = "Viejo Florencio"
+
+[node name="TextoMensaje" type="RichTextLabel" parent="ColorRect" unique_id=1185489860]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.078
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = 29.0
+offset_right = 464.064
+offset_bottom = 39.5
+text = "Muchacho... menos mal que saliste con vida. Tus compañeros subieron a Kallami..."
+scroll_active = false

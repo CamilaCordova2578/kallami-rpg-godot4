@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://nox6ld4nldsc"]
+
+[ext_resource type="Texture2D" uid="uid://dncx666kwu8w0" path="res://assets/items/tambor.png" id="1_3ta4b"]
+[ext_resource type="Script" uid="uid://ckns41vexa1p" path="res://escenas/items_recolectables/bombo.gd" id="1_hafyy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8w0r3"]
+
+[node name="Bombo" type="Area2D" unique_id=2108063878]
+script = ExtResource("1_hafyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=222463184]
+texture = ExtResource("1_3ta4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1279947912]
+shape = SubResource("CircleShape2D_8w0r3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

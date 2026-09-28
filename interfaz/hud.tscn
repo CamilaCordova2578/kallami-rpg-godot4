@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bmvhituv6qov2"]
+
+[ext_resource type="Script" uid="uid://brre6315ypn3c" path="res://interfaz/hud.gd" id="1_kqs86"]
+[ext_resource type="Texture2D" uid="uid://dncx666kwu8w0" path="res://assets/items/tambor.png" id="2_xo88w"]
+[ext_resource type="Texture2D" uid="uid://cbsvykt63ajb0" path="res://assets/items/kantuta.png" id="3_63aio"]
+[ext_resource type="Texture2D" uid="uid://didhrckr4mwvx" path="res://assets/items/coca.png" id="4_l7omd"]
+[ext_resource type="Texture2D" uid="uid://itrlx6saftmk" path="res://assets/items/alcohol.png" id="5_y8v1u"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1233330203]
+script = ExtResource("1_kqs86")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1355942707]
+offset_right = 202.0
+offset_bottom = 40.0
+
+[node name="IconoBombo" type="TextureRect" parent="HBoxContainer" unique_id=759584857]
+layout_mode = 2
+texture = ExtResource("2_xo88w")
+expand_mode = 3
+
+[node name="IconoKantuta" type="TextureRect" parent="HBoxContainer" unique_id=1703134030]
+layout_mode = 2
+texture = ExtResource("3_63aio")
+expand_mode = 3
+
+[node name="IconoCoca" type="TextureRect" parent="HBoxContainer" unique_id=155729721]
+layout_mode = 2
+texture = ExtResource("4_l7omd")
+expand_mode = 3
+
+[node name="IconoAlcohol" type="TextureRect" parent="HBoxContainer" unique_id=965827417]
+layout_mode = 2
+texture = ExtResource("5_y8v1u")
+expand_mode = 3

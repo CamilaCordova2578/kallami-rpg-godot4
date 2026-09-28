@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cls1r21qwjsb4"]
+
+[ext_resource type="Script" uid="uid://cdjq0uhran0s3" path="res://escenas/menus/epilogo.gd" id="1_0djtd"]
+[ext_resource type="Texture2D" uid="uid://b2v30sm0kj2de" path="res://pantallas/Epilogo/epilogoEscena.png" id="2_gwe6g"]
+[ext_resource type="Texture2D" uid="uid://y77ed1cb2ka5" path="res://assets/ui/botones/botonEpilogo.png" id="3_bt764"]
+[ext_resource type="FontFile" uid="uid://bmiuto2fcp5iq" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_gwe6g"]
+
+[node name="epilogo" type="Control" unique_id=2081666100]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 525.0
+offset_bottom = 389.0
+script = ExtResource("1_0djtd")
+
+[node name="Libro" type="TextureRect" parent="." unique_id=1624380644]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_gwe6g")
+
+[node name="TextoIzquierdo" type="RichTextLabel" parent="Libro" unique_id=999818139]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 78.0
+offset_right = 250.0
+offset_bottom = 271.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_gwe6g")
+
+[node name="TextoDerecho" type="RichTextLabel" parent="Libro" unique_id=540354977]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 74.0
+offset_right = 422.0
+offset_bottom = 284.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_gwe6g")
+
+[node name="BtnAvanzar" type="TextureButton" parent="." unique_id=833110998]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 259.0
+offset_right = 471.0
+offset_bottom = 299.0
+texture_normal = ExtResource("3_bt764")

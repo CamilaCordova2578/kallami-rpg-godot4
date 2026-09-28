@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cmkd34pgym3bo"]
+
+[ext_resource type="PackedScene" uid="uid://csfvap3ng5qb0" path="res://pantallas/Creditos/escena_creditos.tmx" id="1_mpv5p"]
+
+[node name="escena_creditos" unique_id=414404711 instance=ExtResource("1_mpv5p")]

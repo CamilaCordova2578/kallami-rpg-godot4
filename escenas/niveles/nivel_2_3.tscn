@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bvpjoax3bst5k"]
+
+[ext_resource type="PackedScene" uid="uid://ckwc5b5wqug3s" path="res://mapas/sala3_apacheta/escena2_3.tmx" id="1_0ntbh"]
+[ext_resource type="PackedScene" uid="uid://dgeva8ryrofdt" path="res://interfaz/portal.tscn" id="2_4y8hv"]
+[ext_resource type="PackedScene" uid="uid://5v8fnykg4c5h" path="res://escenas/items_recolectables/alcohol.tscn" id="2_8kwnc"]
+[ext_resource type="PackedScene" uid="uid://cyomm5nsdv17v" path="res://escenas/obstaculos/obstaculo_2_3_2.tscn" id="2_8xkqp"]
+[ext_resource type="Script" uid="uid://4cs4vr3kg0wt" path="res://escenas/niveles/nivel_1_1.gd" id="2_aruws"]
+[ext_resource type="PackedScene" uid="uid://cbmo48qv3mxym" path="res://escenas/obstaculos/obstaculo_2_3.tscn" id="2_pfr0r"]
+[ext_resource type="PackedScene" uid="uid://iedsrgxua25d" path="res://escenas/personajes/tamborista.tscn" id="2_y0lc5"]
+
+[node name="escena2_3" unique_id=456392480 instance=ExtResource("1_0ntbh")]
+script = ExtResource("2_aruws")
+
+[node name="obstaculo2_6" parent="." index="0" unique_id=1094214468 instance=ExtResource("2_8xkqp")]
+position = Vector2(451, 170)
+
+[node name="obstaculo2_1" parent="." index="1" unique_id=1205189530 instance=ExtResource("2_pfr0r")]
+position = Vector2(271, 115)
+
+[node name="obstaculo2_2" parent="." index="2" unique_id=972993058 instance=ExtResource("2_pfr0r")]
+position = Vector2(122, 207)
+
+[node name="obstaculo2_3" parent="." index="3" unique_id=17990809 instance=ExtResource("2_pfr0r")]
+position = Vector2(365, 228)
+
+[node name="obstaculo2_7" parent="." index="4" unique_id=947954612 instance=ExtResource("2_pfr0r")]
+position = Vector2(313, 263)
+
+[node name="obstaculo2_4" parent="." index="5" unique_id=1509068394 instance=ExtResource("2_pfr0r")]
+position = Vector2(53, 132)
+
+[node name="obstaculo2_5" parent="." index="6" unique_id=526832472 instance=ExtResource("2_pfr0r")]
+position = Vector2(352, 170)
+
+[node name="Alcohol" parent="." index="7" unique_id=2108063878 instance=ExtResource("2_8kwnc")]
+position = Vector2(429, 210)
+
+[node name="Portal" parent="." index="8" unique_id=1767841043 node_paths=PackedStringArray("punto_respawn") instance=ExtResource("2_4y8hv")]
+position = Vector2(1, -74)
+ruta_siguiente_nivel = "uid://x5gftyjgyveo"
+punto_respawn = NodePath("../PuntoInicio")
+requiere_bombo = true
+requiere_coca = true
+requiere_alcohol = true
+requiere_kantuta = true
+
+[node name="tamborista" parent="." index="9" unique_id=1302679034 instance=ExtResource("2_y0lc5")]
+position = Vector2(257, 380)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="10" unique_id=1142479326]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0" unique_id=581107206]
+polygon = PackedVector2Array(-2, 3, -1, 384, 115, 384, 226, 383, 229, 334, 225, 296, 196, 284, 190, 238, 25, 236, 36, 231, 47, 221, 40, 212, 17, 209, 24, 202, 26, 146, 39, 133, 54, 112, 80, 93, 85, 99, 101, 93, 107, 100, 117, 87, 136, 87, 151, 75, 157, 85, 170, 84, 189, 75, 224, 75, 235, 51, 261, 43, 273, 49, 244, -6)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" index="1" unique_id=746088703]
+polygon = PackedVector2Array(512, 382, 320, 383, 307, 383, 285, 371, 281, 348, 285, 331, 290, 306, 302, 291, 316, 287, 333, 288, 448, 287, 449, 248, 442, 254, 373, 260, 370, 213, 380, 207, 384, 221, 474, 220, 473, 167, 383, 166, 382, 173, 369, 176, 370, 135, 336, 125, 342, 87, 305, 76, 306, 126, 307, 151, 306, 187, 280, 194, 254, 194, 237, 187, 239, 199, 224, 211, 203, 216, 153, 213, 131, 201, 116, 197, 108, 199, 105, 172, 104, 124, 293, 122, 292, 71, 283, 77, 278, 52, 249, 0, 511, -1)
+
+[node name="PuntoInicio" type="Marker2D" parent="." index="11" unique_id=1787809894]
+position = Vector2(258, 383)

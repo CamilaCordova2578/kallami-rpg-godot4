@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://t704k28rw2td"]
+
+[ext_resource type="Texture2D" uid="uid://cy0rp3ofcqcyo" path="res://pantallas/Creditos/creditos.png" id="1_dn8lb"]
+[ext_resource type="Script" uid="uid://367c4gx1646v" path="res://escenas/menus/creditos.gd" id="1_mow6l"]
+[ext_resource type="FontFile" uid="uid://bmiuto2fcp5iq" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_mow6l"]
+[ext_resource type="Texture2D" uid="uid://bwejft0h0i5ig" path="res://assets/ui/botones/botonMenuIncio.png" id="3_v24d0"]
+
+[node name="Control" type="Control" unique_id=771921494]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 513.0
+offset_bottom = 416.0
+script = ExtResource("1_mow6l")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=2131043045]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_dn8lb")
+
+[node name="BtnInicio" type="TextureButton" parent="." unique_id=1199445010]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 340.0
+offset_right = 496.0
+offset_bottom = 380.0
+texture_normal = ExtResource("3_v24d0")
+
+[node name="TextoCreditos" type="RichTextLabel" parent="." unique_id=1494234853]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 47.0
+offset_right = 411.0
+offset_bottom = 339.0
+theme_override_fonts/normal_font = ExtResource("2_mow6l")
+text = "KALLAMI: EL ECO DEL CONSENSO
+
+DISEÑO Y DESARROLLO PRINCIPAL
+Camila Ayelen Cordova Vasquez
+
+MOTOR Y HERRAMIENTAS
+Godot Engine 4
+Aseprite / Tiled Map Editor
+
+MÚSICA Y SONIDO
+(Herramientas IA: Suno / ElevenLabs)
+
+¡Gracias por jugar!
+"
+horizontal_alignment = 1
